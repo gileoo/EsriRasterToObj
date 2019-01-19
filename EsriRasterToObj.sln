@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.fsproj", "{A4E6A8AA-2BFB-48A2-B772-04DB4784D613}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ErsiToObj", "ConsoleApplication1\ErsiToObj.fsproj", "{A4E6A8AA-2BFB-48A2-B772-04DB4784D613}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
