@@ -132,14 +132,17 @@ let esriToObj nth shift scale cut fileName =
 [<EntryPoint>]
 let main argv =
 
+    //-- read options from argument list
     let nth   = optionValue argv "nth"  Int32.Parse 1
     let scale = optionValue argv "scl" Double.Parse 1.0
     let shift = optionValue argv "sft"   Vec2.Parse { X= 0.; Y= 0. }  
     let cut   = optionValue argv "cut" Bound2.Parse { min= { X= 0.; Y= 0. }; 
                                                       max= { X= 0.; Y= 0. } }
-                                                    
+
+    //-- apply task on filtered files in the current directory                                                
     let success = onCurrentDirectoryFiles argv (esriToObj nth shift scale cut) 
-    
+
+    //-- print help if task could not be applied    
     if not success then
         printfn "Convert ESRI Raster ASCII to OBJ"
         printfn "  Usage: "

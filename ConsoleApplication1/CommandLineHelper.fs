@@ -3,6 +3,8 @@
 open System
 
 
+/// Search argument list for an option and return its parsed value. If not 
+/// found, or the parsing is invalid return the noVal as default.
 let inline optionValue (argv) (optName) (parse:string -> 'a) (noVal:'a) = 
     let optIdx =
         argv
@@ -14,6 +16,9 @@ let inline optionValue (argv) (optName) (parse:string -> 'a) (noVal:'a) =
         noVal
 
 
+/// Apply a task on all files in the current directory. The last element
+/// of the argument list is assumed to be a wildcard, or file specifier.
+/// The task is a function taking one filePath.
 let onCurrentDirectoryFiles (argv:string[]) (task:string -> unit)  =
     if argv.Length > 0 then
         let files =  
@@ -24,7 +29,7 @@ let onCurrentDirectoryFiles (argv:string[]) (task:string -> unit)  =
 
         if files.Length = 0 then
             false
-        else
+        else 
             files |> Array.iter( task )
             printfn "done"
             true
